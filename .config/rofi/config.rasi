@@ -1,0 +1,53 @@
+/* vim: set ft=css: */
+
+configuration {
+	display-run: "run ";
+	width: 24;
+	lines: 8;
+	columns: 1;
+	bw: 0; /* ?? */
+	location: 1;
+	xoffset: 16;
+	yoffset: 16;
+	show-icons: false;
+	modi: "drun,run,window";
+}
+
+* {
+	font: "monospace 12";
+	background-color: #000000;
+	text-color: #ffffff;
+	text-style: none;
+}
+
+window {
+	fullscreen: false;
+	children: [mainbox];
+}
+
+mainbox {
+	border: 1 1 1 1;
+	border-color: #fff;
+	background-color: transparent;
+	padding: 16 16;
+	children: [entry, listview];
+}
+
+entry {
+	expand: false;
+	padding: 4 8;
+	margin: 0 0 8 0;
+}
+
+prompt {
+	color: #ca4c7a;
+}
+
+element, inputbar {
+	padding: 4 8;
+}
+
+element selected {
+	background-color: #ffffff;
+	text-color: #000000;
+}
