@@ -1,0 +1,54 @@
+/* scrollbars */
+
+html {
+	scrollbar-color: #444 black;
+	scrollbar-width: thin;
+}
+
+/* site-specific styling */
+
+@-moz-document url(about:newtab), url(about:home) {
+	body {
+		overflow-y: hidden !important;
+		background: black !important;
+	}
+	
+	/*
+	body::after {
+		content:  "hi";
+		
+		position: absolute;
+		top:      8px;
+		left:     16px;
+		
+		color:    #666;
+		font:     12pt monospace;
+	}
+	*/
+}
+
+@-moz-document domain(duckduckgo.com) {
+	*:not(.header__button--menu) {
+		font: 12pt monospace !important;
+	}
+	
+	.header__logo, .search-filters-wrap,
+	#search_button, #search_form_input_clear { display: none !important }
+	
+	.result__snippet { color: #444 !important }
+	
+	/*@only screen and (max-width: 1079px) {*/
+		.metabar__in, .zcm-wrap, .zci__main, .zci__detail, .serp__results, .footer, .footer--mobile,
+		.header__search-wrap, .content__internal {
+			padding-left:  114px !important;
+		}
+		
+		.search__input--adv {
+			color: #cee318 !important;
+		}
+		
+		#duckbar {
+			opacity: 0.5;
+		}
+	/*}*/
+}

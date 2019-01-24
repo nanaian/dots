@@ -1,0 +1,68 @@
+# its terminal
+super + {_,shift +}Return
+	alacritty
+
+# its rofi
+alt + @space
+	rofi -show run
+
+# volume adjust
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume 0 {+,-}5%
+
+# volume mute
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+# backlight adjust
+XF86MonBrightness{Up,Down}
+	expr `cat /sys/class/backlight/amdgpu_bl0/brightness` {+,-} 5 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
+
+# audio control
+XF86Audio{Play,Next,Prev}
+	playerctl {play-pause,next,previous}
+
+# screenshot area
+Print
+	pomfclip
+
+# reload sxhkd config (this file!)
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# quit bspwm
+super + shift + Escape
+	bspc quit
+
+# close, kill
+super + {_,shift +}q
+	bspc node -{c,k}
+
+# toggle monocle mode
+super + @space
+	bspc desktop -l next
+
+# set window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# expand window
+super + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract window
+super + shift + {Left,Down,Up,Right}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# focus desktop
+super + {1-9,0}
+	bspc desktop -f {1-9,0}
+
+# move window to desktop
+super + shift + {1-9,0}
+	bspc node --to-desktop {1-9,0}
+
+# spawn empty feh
+super + a
+	feh ~/img/transparent.png
+
