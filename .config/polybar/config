@@ -56,7 +56,7 @@ modules-right = pulseaudio battery
 ;tray-padding = 2
 ;tray-background = #0063ff
 
-; tell awesome not to configure this client
+wm-restack = bspwm
 override-redirect = true
 
 ;scroll-up = bspwm-desknext
