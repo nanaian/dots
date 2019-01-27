@@ -1,31 +1,15 @@
-/* scrollbars */
+/* everywhere */
 
 html {
 	scrollbar-color: #444 black;
 	scrollbar-width: thin;
+	
+	font: 12pt monospace;
+	color: white;
+	background: black;
 }
 
 /* site-specific styling */
-
-@-moz-document url(about:newtab), url(about:home) {
-	body {
-		overflow-y: hidden !important;
-		background: black !important;
-	}
-	
-	/*
-	body::after {
-		content:  "hi";
-		
-		position: absolute;
-		top:      8px;
-		left:     16px;
-		
-		color:    #666;
-		font:     12pt monospace;
-	}
-	*/
-}
 
 @-moz-document domain(duckduckgo.com) {
 	*:not(.header__button--menu) {
