@@ -1,3 +1,5 @@
+source .profile
+
 export PATH=~/bin:~/.cargo/bin:$PATH
 
 autoload -Uz compinit
