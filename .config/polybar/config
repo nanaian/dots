@@ -100,7 +100,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume = %percentage:3%% vol
+label-volume = %{A1:pavucontrol}%percentage:3%% vol%{A}
 
 label-muted = muted
 
